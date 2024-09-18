@@ -1,0 +1,103 @@
+---
+
+---
+
+<section class="news">
+    <div class="news__container">
+        <div class="news__texts">
+            <h2 class="news__title">
+                Stay up to date on all the latest news.
+            </h2>
+        </div>
+        <div class="news__email">
+            <form action="">
+                <input type="email" placeholder="Your email">
+                <button type="submit"><i class="ri-send-plane-fill"></i></button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    :root {
+  --primary-color: #f5b754;
+  --primary-color-dark: #d6a04a;
+  --text-dark: #15191d;
+  --text-light: #737373;
+  --extra-light: #e5e5e5;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Syncopate", sans-serif;
+	}
+    .news{
+        background-color: var(--text-dark);
+        padding: 2.5rem 2rem;
+    }
+    .news__container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: var(--max-width);
+        margin: 0 auto;
+        align-items: center;
+        gap: 2rem;
+    }
+    form{
+        width: 100%;
+    max-width: 450px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    }
+    form input{
+        width: 100%;
+    outline: none;
+    border: none;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: transparent;
+    border-bottom: 2px solid var(--text-light);
+    }
+    .news__title{
+        font-size: 2.8rem;
+    font-weight: 700;
+    font-family: var(--header-font);
+    color: var(--white);
+    letter-spacing: -5px;
+    line-height: 4.25rem;
+    }
+    form button{
+        padding:0.8rem 1.2rem;
+        background-color: var(--primary-color);
+        color: var(--white);
+        font-size: 2rem;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    form button:hover{
+        color: var(--text-dark);
+    }
+
+    @media (max-width:1267px ){
+        .news__container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+    }
+    .news__title{
+        font-size: 2.8rem;
+    font-weight: 700;
+    font-family: var(--header-font);
+    color: var(--white);
+    letter-spacing: -5px;
+    line-height: 4rem;
+    text-align: center;
+    }
+
+  
+    }
+</style>

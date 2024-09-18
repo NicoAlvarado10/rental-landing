@@ -1,0 +1,132 @@
+---
+
+---
+
+<section class="download">
+  <div class="download__container">
+    <div class="download__texts">
+      <h2 class="donwload__title">PREMIUM CAR RENTAL</h2>
+      <div class="download__links">
+        <a href="#"><img src="/src/assets/google.png" alt="google-image"></a>
+        <a href="#"><img src="/src/assets/apple.png" alt="apple-image"></a>
+      </div>
+
+    </div>
+
+    <div class="download__img">
+      <img src="/src/assets/download.png" alt="location-image">
+    </div>
+  </div>
+</section>
+
+<style>
+    	:root {
+  --primary-color: #f5b754;
+  --primary-color-dark: #d6a04a;
+  --text-dark: #15191d;
+  --text-light: #737373;
+  --extra-light: #e5e5e5;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Syncopate", sans-serif;
+	}
+  .download{
+    padding: 3rem 2rem;
+    background: linear-gradient(to top, var(--text-dark) 50%, white 50%)
+  }
+  .download__texts{
+    display: flex;
+    flex-direction: column;
+    padding-left: 4rem;
+  }
+  .donwload__title{
+    font-size: 3.25rem;
+    font-weight: 700;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+    letter-spacing: -5px;
+    line-height: 4.25rem;
+  }
+  .download__container{
+    max-width: var(--max-width);
+    background-color: var(--primary-color);
+    border-radius: 1.5rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    
+  }
+  .download__links{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 1rem;
+  }
+  .download__links a{
+    width: 30%;
+  }
+  .download__img{
+    width: 50%;
+  }
+  .download__img img{
+    width: 75%;
+    
+  }
+
+  @media (max-width:768px ){
+      .download__img {
+        display: none;
+      }
+      .donwload__title{
+        text-align: center;
+      }
+      .download__container{
+        padding: 4rem 2rem;
+      }
+      .download__texts{
+    padding-left: 0;
+  }
+  .download__links a{
+    width: 30%;
+    margin: 0 auto;
+  }
+  .download__links{
+    gap: 0;
+  }
+  }
+  @media (max-width:540px ){
+    .donwload__title{
+    font-size: 3rem;
+  }
+  .download__links a{
+    width: 45%;
+    margin: 0 auto;
+  }
+  }
+</style>
+
+<script>
+        //ANIMACIONES
+import ScrollReveal from 'scrollreveal';
+
+const scrollRevealOption = {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+};
+
+ScrollReveal().reveal(".download__img img", {
+    ...scrollRevealOption,
+    origin:'right'
+});
+
+ScrollReveal().reveal(".donwload__title", scrollRevealOption,
+  );
+
+  ScrollReveal().reveal(".download__links", {
+    ...scrollRevealOption,
+    delay:500,
+  });
+
+
+</script>

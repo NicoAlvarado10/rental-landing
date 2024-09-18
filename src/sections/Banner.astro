@@ -1,0 +1,56 @@
+---
+
+---
+<section class="banner">
+    <div class="banner__grid">
+        <img src="/src/assets/banner-1.png" alt="marca-auto" class="banner__img">
+        <img src="/src/assets/banner-2.png" alt="marca-auto" class="banner__img">
+        <img src="/src/assets/banner-3.png" alt="marca-auto" class="banner__img">
+        <img src="/src/assets/banner-4.png" alt="marca-auto" class="banner__img">
+        <img src="/src/assets/banner-5.png" alt="marca-auto" class="banner__img">
+        <img src="/src/assets/banner-6.png" alt="marca-auto" class="banner__img">
+        <img src="/src/assets/banner-7.png" alt="marca-auto" class="banner__img">
+        <img src="/src/assets/banner-8.png" alt="marca-auto" class="banner__img">
+        <img src="/src/assets/banner-9.png" alt="marca-auto" class="banner__img">
+        <img src="/src/assets/banner-10.png" alt="marca-auto" class="banner__img">
+    </div>
+</section>
+
+<style>
+    .banner{
+        padding-block: 5rem;
+        overflow: hidden;
+    }
+    .banner__grid{
+        width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+    animation: scroll 45s linear infinite;
+        
+    }
+    .banner__img {
+        height: 100px;
+        
+    }
+    @keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - 4rem));
+  }
+}
+</style>
+
+<script>
+const banner = document.querySelector(".banner__wrapper") as HTMLElement | null;
+
+if (banner) {
+    const bannerContent = Array.from(banner.children) as HTMLElement[];
+
+    bannerContent.forEach((item) => {
+        const duplicateNode = item.cloneNode(true) as HTMLElement;
+        duplicateNode.setAttribute("aria-hidden", "true");
+        banner.appendChild(duplicateNode);
+    });
+}
+
+</script>

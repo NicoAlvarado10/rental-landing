@@ -1,0 +1,99 @@
+---
+const {numberMilage,numberSeats,numberSpeed, numberKm, href} = Astro.props
+---
+
+<div class="swiper-slide" role="group" aria-label="5 / 5" data-swiper-slide-index="4" style="transition-duration: 0ms; transform: translate3d(-300px, 0px, -1500px) rotateX(0deg) rotateY(0deg) scale(0.25); z-index: -2;">
+
+    <div class="select__card">
+      <img src={href} alt="select">
+      <div class="select__info">
+        <div class="select__info--container">
+          
+          <div class="select__info__card">
+            <span><i class="ri-speed-up-line"></i></span>
+            <h4>{numberKm}<span>km/h</span></h4>
+          </div>
+  
+          <div class="select__info__card">
+            <span><i class="ri-settings-5-line"></i></span>
+            <h4>{numberSpeed}<span>speed</span></h4>
+          </div>
+          
+          <div class="select__info__card">
+            <span><i class="ri-roadster-line"></i></span>
+            <h4>{numberSeats}<span>seats</span></h4>
+          </div>
+          
+          <div class="select__info__card">
+            <span><i class="ri-signpost-line"></i></span>
+            <h4>{numberMilage}<span>milage</span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <style>
+
+.swiper-slide {
+  max-width: 900px;
+}
+
+.select__card img {
+  max-width: 800px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.5));
+  
+}
+
+.select__info {
+  max-width: 600px;
+  margin-inline: auto;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.select__card.show__info .select__info {
+  display: flex;
+}
+
+.select__info__card {
+  text-align: center;
+}
+
+.select__info__card > span {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 5px 15px;
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border-radius: 100%;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.select__info__card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+}
+
+.select__info__card h4 span {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+@media (max-width:540px ){
+   .select__info--container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+   }
+}
+
+  </style>

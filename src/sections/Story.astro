@@ -1,0 +1,99 @@
+---
+import Article from "../components/Article.astro"
+---
+<section class="story">
+    <h2 class="story__title">
+        STORIES BEHIND <br> THE WHEEL
+    </h2>
+    <div class="story__grid">
+        <Article
+            fecha="12"
+            mes="January"
+            año="2024"
+            titulo="Adventures on the Open Road"
+            parrafo="Join us as we dive into the exhilarating stories of travelers who embarked on unforgettable journeys with PREMIUM CAR RENTAL."
+            href="/src/assets/story-1.jpg"
+        />
+        <Article
+            fecha="04"
+            mes="March"
+            año="2024"
+            titulo="Luxury and Comfort: Experiences"
+            parrafo="In this series, we highlight the luxurious touches, unparalleled comfort, and exceptional service that make every ride."
+            href="/src/assets/story-2.jpg"
+        />
+        <Article
+            fecha="18"
+            mes="June"
+            año="2024"
+            titulo="Cars that Adapt to Your Lifestyle"
+            parrafo="Read about how our versatile vehicles have seamlessly integrated into the lives of professionals and families alike."
+            href="/src/assets/story-3.jpg"
+        />
+    </div>
+</section>
+
+<style>
+    :root {
+  --primary-color: #f5b754;
+  --primary-color-dark: #d6a04a;
+  --text-dark: #15191d;
+  --text-light: #737373;
+  --extra-light: #e5e5e5;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Syncopate", sans-serif;
+	}
+    .story{
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 5rem 1rem;
+    }
+    .story__grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1rem;
+       
+    }
+    .story__title{
+        max-width: 600px;
+    margin-inline: auto;
+    margin-bottom: 3.5rem;
+    text-align: center;
+    font-family: var(--header-font);
+    font-size: 3.2rem;
+    }
+
+    @media (max-width:768px ){
+        .story__grid{
+        grid-template-columns: repeat(2,1fr);
+       
+    }
+    
+    @media (max-width:540px ){
+        .story__grid{
+            display: flex;
+            flex-direction: column;
+        }
+        .story__title{
+            line-height: 4rem;
+        }
+    }
+    }
+</style>
+
+<script>
+      //ANIMACIONES
+import ScrollReveal from 'scrollreveal';
+
+const scrollRevealOption = {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+};
+
+ScrollReveal().reveal("article", {
+    ...scrollRevealOption,
+  interval:500
+});
+</script>

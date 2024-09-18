@@ -1,0 +1,60 @@
+---
+const {fecha, mes, año,titulo, parrafo, href} = Astro.props
+---
+
+<article class="article">
+    <div class="article__fecha">
+        <span class="numero">{fecha}</span>
+        <span class="fecha">{mes} <br>{año}</span>
+    </div>
+    <div class="article__text">
+        <h3 class="article__title">{titulo}</h3>
+        <p class="article__paragraph">{parrafo}</p>
+        <img src={href} alt="car-image">
+    </div>
+</article>
+
+<style>
+        :root {
+  --primary-color: #f5b754;
+  --primary-color-dark: #d6a04a;
+  --text-dark: #15191d;
+  --text-light: #737373;
+  --extra-light: #e5e5e5;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Syncopate", sans-serif;
+	}
+    .article__fecha{
+        display: flex;
+        gap: 1rem;
+        border-bottom: 2px solid var(--text-dark);
+        margin-bottom: 1.2rem;
+        padding-bottom: 1rem;
+        align-items: center;
+    }
+    .article__title{
+        margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-family: var(--header-font);
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 2rem;
+    color: var(--text-dark);
+    }
+    .article__paragraph{
+        color: var(--text-light);
+        padding-bottom: 1rem;
+    }
+    .numero{
+        font-size: 3rem;
+        font-weight: 500;
+    }
+    .fecha{
+        border-left: 2px solid var(--text-light);
+        padding-left: 1rem;
+        color: var(--text-light);
+        font-weight: 500;
+    }
+   
+</style>

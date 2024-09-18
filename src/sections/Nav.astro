@@ -1,0 +1,161 @@
+---
+
+---
+<nav class="nav">
+<a href="#" class="nav__logo">RENTAL</a>
+<ul class="nav__menu">
+    <li><a href="#home" class="nav__link">Home</a></li>
+    <li><a href="#rent" class="nav__link">Rent</a></li>
+    <li><a href="#ride" class="nav__link">Ride</a></li>
+    <li><a href="#contact" class="nav__link">Contact</a></li>
+</ul>
+<button class="nav__btn">Get Started</button>
+
+<div class="menu-toggle">
+    <i class="ri-menu-fill"></i>
+</div>
+</nav>
+
+<style>
+    	:root {
+  --primary-color: #f5b754;
+  --primary-color-dark: #d6a04a;
+  --text-dark: #15191d;
+  --text-light: #737373;
+  --extra-light: #e5e5e5;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Syncopate", sans-serif;
+	}
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1rem;
+        padding-top: 2rem;
+        z-index: 1;
+    }
+    .nav__logo{
+        color: var(--text-dark);
+        letter-spacing: -2px;
+        font-weight: 700;
+        font-family: var(--header-font);
+        font-size: 1.5rem;
+    }
+    .nav__btn{
+        color: var(--text-dark);
+        background-color: var(--primary-color);
+        padding: 1.1rem 2rem;
+        cursor: pointer;
+        border-radius: 0.8rem;
+        font-size: 1.1rem;
+    }
+    .nav__link{
+        color: var(--text-dark);
+        font-weight: 500;
+    }
+    .nav__link:hover{
+        color: var(--primary-color-dark);
+    }
+    .nav__menu{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        z-index: 1
+        ;
+    }
+    .menu-toggle{
+        display: none;
+    }
+
+    @media (max-width:768px ){
+        .nav__menu {
+        display: none;
+        flex-direction: column;
+        
+    }
+    .nav__logo{
+        margin-left: 2rem;
+        color: var(--white);
+    }
+    .menu-toggle{
+        margin-right: 2rem;
+    }
+    .nav{
+        background-color: var(--primary-color);
+        position: fixed;
+        width: 100%;
+        padding: 0;
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+        z-index: 1;
+    }
+    .nav__btn{
+        display: none;
+    }
+    .nav__link{
+        color: var(--white);
+    }
+    .nav__link:hover{
+        color: var(--text-dark);
+
+    }
+    .nav__menu.active {
+        display: flex;
+        position: absolute;
+        bottom: 10%;
+        background-color: var(--primary-color);
+        padding: 2rem 0;
+        width: 100%;
+        transform: translateY(100%);
+        transition: 0.3s;
+        z-index: 1;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--white);
+        z-index: 1;
+    }
+    }
+
+
+</style>
+
+<script>
+ const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav__menu');
+    const menuIcon = menuToggle.querySelector('i');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (event) => {
+            const target = event.target as Node;
+            if (!navMenu.contains(target) && !menuToggle.contains(target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    } 
+    
+    menuIcon.addEventListener("click", (e) => {
+        navMenu.classList.toggle("open");
+
+        const isOpen = navMenu.classList.contains("open");
+        menuIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+    });
+
+    document.addEventListener("click", (e) => {
+        const target = e.target as Node;
+        if (!navMenu.contains(target) && !menuIcon.contains(target)) {
+            navMenu.classList.remove("open");
+            menuIcon.setAttribute("class", "ri-menu-line");
+        }
+    });
+</script>

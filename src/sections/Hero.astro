@@ -1,0 +1,163 @@
+---
+---
+<div  class="hero" id="home">
+    <h1 class="hero__title">PREMIUM CAR RENTAL</h1>
+    <form action="/" class="form">
+        <div >
+          <label for="location">Pick up &amp; Return location</label>
+          <input type="text" name="location" id="location" placeholder="Dallas, Texas">
+        </div>
+        <div >
+          <label for="start">Start</label>
+          <input type="text" name="start" id="start" placeholder="Aug 16, 10:00 AM">
+        </div>
+        <div >
+          <label for="stop">Stop</label>
+          <input type="text" name="stop" id="stop" placeholder="Aug 18, 10:00 PM">
+        </div>
+        <button class="form__btn">
+          <i class="ri-search-line"></i>
+        </button>
+      </form>
+      <img class="hero__img" src="/src/assets/header.png" alt="header-image">
+    
+</div>
+
+<style>
+    :root {
+	--primary-color: #f5b754;
+	--primary-color-dark: #d6a04a;
+	--text-dark: #15191d;
+	--text-light: #737373;
+	--extra-light: #e5e5e5;
+	--white: #ffffff;
+	--max-width: 1200px;
+	--header-font: "Syncopate", sans-serif;
+}
+.hero{
+    padding: 5rem 1rem;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+.hero::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--primary-color);
+    transform: translateY(50%) skewY(-4deg);
+    z-index: -1;
+}
+.hero__title {
+    max-width: 750px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+    font-size: 4.5rem;
+    font-weight: 700;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+    letter-spacing: -5px;
+    line-height: 5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+.hero__img{
+    max-width: 1050px;
+    margin-inline: auto;
+    filter: drop-shadow(5px 20px 20px rgba(0, 0, 0, 0.5));
+}
+
+.form{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-grow: 1;
+    background-color: var(--white);
+    padding: 1rem 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.5rem;
+}
+.form__btn{
+    color: var(--white);
+    padding: 1rem 1.2rem;
+    background-color: var(--text-dark);
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.form label{
+    color: var(--text-dark);
+    font-weight: 500;
+    
+}
+.form input{
+    font-size: 1.1rem;
+}
+.form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+@media (max-width:540px ){
+
+.hero__title{
+  font-size: 3.8rem;
+  text-align: center;
+}
+.form__btn{
+    width: 40%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 0.8rem ;
+    
+}
+.form label{
+    padding-bottom: 0.5rem;
+}
+}
+
+@media (max-width:825px ){
+  .form{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        
+}
+}
+
+</style>
+
+<script>
+
+//ANIMACIONES
+
+ import ScrollReveal from 'scrollreveal';
+
+const scrollRevealOption = {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+};
+ScrollReveal().reveal(".hero__title", scrollRevealOption);
+
+ScrollReveal().reveal(".form", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+
+ScrollReveal().reveal(".hero__img", {
+  ...scrollRevealOption,
+  delay: 1000,
+});
+
+
+
+</script>

@@ -1,0 +1,215 @@
+---
+import Slider from '../components/Slider.astro';
+import 'swiper/css/bundle';
+
+
+
+---
+
+<section class="select__container" id="ride">
+    <h2 class="section__header">PICK YOUR DREAM CAR TODAY</h2>
+    
+    <div class="swiper swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress">
+      
+      <div class="swiper-wrapper" id="swiper-wrapper-1766ec77149fbc62" aria-live="polite" style="cursor: grab; transition-duration: 0ms; transform: translate3d(-2390.5px, 0px, 0px); transition-delay: 0ms;">
+
+        <Slider
+            href="/src/assets/select-5.png"
+            numberKm="254"
+            numberSpeed="6"
+            numberSeats="5"
+            numberMilage='10'
+        />
+        
+        <Slider
+            href="/src/assets/select-1.png"
+            numberKm="200"
+            numberSpeed="6"
+            numberSeats="5"
+            numberMilage='15'
+        />
+
+        <Slider
+            href="/src/assets/select-2.png"
+            numberKm="215"
+            numberSpeed="6"
+            numberSeats="5"
+            numberMilage='16'
+        />
+
+        <Slider
+            href="/src/assets/select-3.png"
+            numberKm="306"
+            numberSpeed="6"
+            numberSeats="5"
+            numberMilage='12'
+        />
+
+      <Slider
+            href="/src/assets/select-4.png"
+            numberKm="350"
+            numberSpeed="6"
+            numberSeats="2"
+            numberMilage='08'
+        />
+
+    </div>
+
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+
+    <form action="/" class="select__form">
+      <div class="select__price">
+        <span><i class="ri-price-tag-3-line"></i></span>
+        <div><span id="select-price">275</span> /day</div>
+      </div>
+      <div class="select__btns">
+        <button class="btn">View Details</button>
+        <button class="btn">Rent Now</button>
+      </div>
+    </form>
+  </section>
+
+  <style>
+.select__container {
+  padding-top: 5rem;
+  margin-bottom: 5rem;
+  background-image: url("/src/assets/select-bg.png");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+
+.select__container .section__header {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.section__header{
+    font-size: 2.8rem;
+    font-family: var(--header-font);
+}
+
+.swiper {
+  width: 100%;
+}
+
+
+
+
+.select__form {
+  max-width: 750px;
+  margin-inline: auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  transform: translateY(50%);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.select__price {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-family: var(--header-font);
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.select__price span {
+  font-size: 3rem;
+  line-height: 3rem;
+  color: var(--text-dark);
+}
+
+.select__price span:not(#select-price) {
+  font-weight: 400;
+}
+
+.select__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.select__btns .btn {
+  min-width: 135px;
+}
+
+.select__btns .btn:nth-child(2) {
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+
+
+  </style>
+
+<script>
+import Swiper from 'swiper/bundle';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const selectCards = document.querySelectorAll<HTMLElement>(".select__card");
+    if (selectCards.length > 0) {
+        selectCards[0].classList.add("show__info");
+    }
+
+    const price: string[] = ["225", "455", "275", "625", "395"];
+    const priceEl = document.getElementById("select-price") as HTMLElement | null;
+
+    function updateSwiperImage(eventName: string, args: any[]) {
+        if (eventName === "slideChangeTransitionStart") {
+            const index = args && args[0].realIndex;
+            if (priceEl && index >= 0 && index < price.length) {
+                priceEl.innerText = price[index];
+                selectCards.forEach((item) => {
+                    item.classList.remove("show__info");
+                });
+                selectCards[index].classList.add("show__info");
+            }
+        }
+    }
+
+    const swiper = new Swiper(".swiper", {
+        loop: true,
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 0,
+            depth: 500,
+            modifier: 1,
+            scale: 0.75,
+            slideShadows: false,
+            stretch: -100,
+        },
+        on: {
+            slideChangeTransitionStart: function (...args) {
+                updateSwiperImage("slideChangeTransitionStart", args);
+            },
+        },
+    });
+
+    const banner = document.querySelector(".banner__wrapper") as HTMLElement | null;
+    if (banner) {
+        const bannerContent = Array.from(banner.children);
+        bannerContent.forEach((item) => {
+            const duplicateNode = item.cloneNode(true) as HTMLElement;
+            duplicateNode.setAttribute("aria-hidden", "true");
+            banner.appendChild(duplicateNode);
+        });
+    }
+});
+
+
+</script>

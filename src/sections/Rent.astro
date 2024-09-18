@@ -1,0 +1,102 @@
+---
+
+---
+
+<section class="rent" id="rent">
+    <div class="rent__text">
+    <h2 class="rent__title">FIND CAR IN YOUR LOCATIONS</h2>
+        <p class="rent__paragraph">Discover the perfect vehicle tailored to your needs, wherever you are. Our 'Find Car in Your Locations' feature allows you to effortlessly search and select from our premium fleet available near you. Whether you're looking for a luxury sedan, a spacious SUV, or a sporty convertible, our easy-to-use tool ensures you find the ideal car for your journey. Simply enter your location, and let us connect you with top-tier vehicles ready for rental.</p>
+        <a href="#" class="rent__link">Find a Location</a>
+    </div>
+    <div class="rent__img">
+        <img src="/src/assets/location.png" alt="app-image">
+    </div>
+</section>
+
+<style>
+        	:root {
+  --primary-color: #f5b754;
+  --primary-color-dark: #d6a04a;
+  --text-dark: #15191d;
+  --text-light: #737373;
+  --extra-light: #e5e5e5;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Syncopate", sans-serif;
+	}
+    .rent{
+        max-width: var(--max-width);
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 4rem;
+        margin: 0 auto;
+        padding: 5rem 1rem;
+        align-items: center;
+    }
+    .rent__title{
+        font-size: 3.20rem;
+    font-weight: 700;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+    letter-spacing: -5px;
+    line-height: 4.25rem;
+    }
+    .rent__paragraph{
+        color: var(--text-light);
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        line-height: 2;
+    }
+    .rent__img img{
+        width: 85%;
+    }
+    .rent__link{
+        padding: 1rem 2rem;
+       background-color: var(--text-dark);
+       color: var(--white);
+       border-radius: 1rem;
+    }
+
+    @media (max-width:768px ){
+        .rent{
+        display: flex;
+        flex-direction: column-reverse;
+        
+    }
+    .rent__img img{
+        margin: 0 auto;
+        width: 80%;
+    }
+    }
+
+</style>
+
+<script>
+    //ANIMACIONES
+import ScrollReveal from 'scrollreveal';
+
+const scrollRevealOption = {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+};
+
+ScrollReveal().reveal(".rent__title", {
+  duration: 1000,
+});
+
+ScrollReveal().reveal(".rent__paragraph", {
+  duration: 1000,
+  delay:500
+});
+
+ScrollReveal().reveal(".rent__link", {
+  duration: 1000,
+  delay:1000
+});
+
+ScrollReveal().reveal(".rent__img", {
+    ...scrollRevealOption,
+    
+});
+</script>

@@ -1,0 +1,139 @@
+<section class="about">
+    <h2 class="about__title">
+        WIDE RANGE OF <br> VEHICLES
+    </h2>
+    <div class="about__grid">
+        <article class="about__card">
+            <img src="/src/assets/range-1.jpg" alt="range-image">
+            <div class="about__descp">
+                <h3 class="about__card--title">CARS</h3>
+                <span><i class="ri-arrow-right-line"></i></span>
+            </div>
+        </article>
+
+        <article class="about__card">
+            <img src="/src/assets/range-2.jpg" alt="range-image">
+            <div class="about__descp">
+                <h3 class="about__card--title">SUVS</h3>
+                <span><i class="ri-arrow-right-line"></i></span>
+
+            </div>
+        </article>
+
+        <article class="about__card">
+            <img src="/src/assets/range-3.jpg" alt="range-image">
+            <div class="about__descp">
+                <h3 class="about__card--title">VANS</h3>
+                <span><i class="ri-arrow-right-line"></i></span>
+            </div>
+        </article>
+
+        <article class="about__card">
+            <img src="/src/assets/range-4.jpg" alt="range-image">
+            <div class="about__descp">
+                 <h3 class="about__card--title">ELECTRIC</h3>
+                <span><i class="ri-arrow-right-line"></i></span>
+            </div>
+        </article>
+    </div>
+</section>
+
+<style>
+    
+:root {
+	--primary-color: #f5b754;
+	--primary-color-dark: #d6a04a;
+	--text-dark: #15191d;
+	--text-light: #737373;
+	--extra-light: #e5e5e5;
+	--white: #ffffff;
+	--max-width: 1200px;
+	--header-font: "Syncopate", sans-serif;
+}
+.about{
+    margin: auto;
+    padding: 5rem 1rem;
+    background-color: var(--white);
+    width: 100%;
+}
+.about__title{
+    color: var(--text-dark);
+    font-family: var(--header-font);
+    font-size: 3rem;
+    text-align: center; 
+}
+.about__grid{
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.5rem;
+    padding-top: 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.about__card {
+    position: relative;
+    isolation: isolate;
+    max-width: 600px;
+    margin-inline: auto;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.about__card:hover img{
+    transition: all 0.3s;
+    transform: scale(1.1);
+}
+.about__descp{
+    position: absolute;
+    inset: 0;
+    padding: 2rem;
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.75));
+    padding-left: 3rem;
+}
+.about__card--title{
+    color: var(--white);
+    font-family: var(--header-font);
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.about__descp span{
+    font-size: 1.5rem;
+    padding: 0.2rem 0.4rem;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    color: var(--white);
+    transition: 0.3s;
+}
+.about__descp span:hover{
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+@media (max-width:540px ){
+    .about__grid{
+        display: flex;
+        flex-direction: column;
+    }
+    .about__title{
+        font-size: 3rem;
+    }
+   
+}
+</style>
+
+<script>
+//ANIMACIONES
+import ScrollReveal from 'scrollreveal';
+
+const scrollRevealOption = {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+};
+ScrollReveal().reveal(".about__card", {
+  duration: 1000,
+  interval: 500,
+});
+</script>
