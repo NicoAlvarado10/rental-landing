@@ -74,13 +74,17 @@ import 'swiper/css/bundle';
 .select__container {
   padding-top: 5rem;
   margin-bottom: 5rem;
-  background-image: url("/src/assets/select-bg.png");
+  background-image: url("/assets/select-bg.png");
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
 
 }
-
+.btn{
+  padding: 0.8rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+}
 
 .select__container .section__header {
   max-width: 600px;
@@ -145,6 +149,10 @@ import 'swiper/css/bundle';
   min-width: 135px;
 }
 
+.select__btns .btn:nth-child(1) {
+  color: var(--white);
+  background-color: var(--text-dark);
+}
 .select__btns .btn:nth-child(2) {
   color: var(--white);
   background-color: var(--primary-color);
