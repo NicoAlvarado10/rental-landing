@@ -2,8 +2,11 @@
 import Slider from '../components/Slider.astro';
 import 'swiper/css/bundle';
 
-
-
+import Select1 from "../assets/select-1.png"
+import Select2 from "../assets/select-2.png"
+import Select3 from "../assets/select-3.png"
+import Select4 from "../assets/select-4.png"
+import Select5 from "../assets/select-5.png"
 ---
 
 <section class="select__container" id="ride">
@@ -14,7 +17,7 @@ import 'swiper/css/bundle';
       <div class="swiper-wrapper" id="swiper-wrapper-1766ec77149fbc62" aria-live="polite" style="cursor: grab; transition-duration: 0ms; transform: translate3d(-2390.5px, 0px, 0px); transition-delay: 0ms;">
 
         <Slider
-            href="/public/assets/select-5.png"
+            href={Select1.src}
             numberKm="254"
             numberSpeed="6"
             numberSeats="5"
@@ -22,7 +25,7 @@ import 'swiper/css/bundle';
         />
         
         <Slider
-            href="/assets/select-1.png"
+            href={Select2.src}
             numberKm="200"
             numberSpeed="6"
             numberSeats="5"
@@ -30,7 +33,7 @@ import 'swiper/css/bundle';
         />
 
         <Slider
-            href="/assets/select-2.png"
+            href={Select3.src}
             numberKm="215"
             numberSpeed="6"
             numberSeats="5"
@@ -38,7 +41,7 @@ import 'swiper/css/bundle';
         />
 
         <Slider
-            href="/assets/select-3.png"
+            href={Select4.src}
             numberKm="306"
             numberSpeed="6"
             numberSeats="5"
@@ -46,7 +49,7 @@ import 'swiper/css/bundle';
         />
 
       <Slider
-            href="/assets/select-4.png"
+            href={Select5.src}
             numberKm="350"
             numberSpeed="6"
             numberSeats="2"
@@ -74,7 +77,7 @@ import 'swiper/css/bundle';
 .select__container {
   padding-top: 5rem;
   margin-bottom: 5rem;
-  background-image: url("/src/assets/select-bg.png");
+  background-image: url("../assets/select-bg.png");
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;

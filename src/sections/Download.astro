@@ -1,5 +1,7 @@
 ---
-
+import GooglePlay from "../assets/google.png"
+import ApleStore from "../assets/apple.png"
+import AppDownload from "../assets/download.png"
 ---
 
 <section class="download">
@@ -7,14 +9,14 @@
     <div class="download__texts">
       <h2 class="donwload__title">PREMIUM CAR RENTAL</h2>
       <div class="download__links">
-        <a href="#"><img src="/public/assets/google.png" alt="google-image"></a>
-        <a href="#"><img src="/public/assets/apple.png" alt="apple-image"></a>
+        <a href="#"><img src={GooglePlay.src} alt="google-image"></a>
+        <a href="#"><img src={ApleStore.src} alt="apple-image"></a>
       </div>
 
     </div>
 
     <div class="download__img">
-      <img src="/assets/download.png" alt="location-image">
+      <img src={AppDownload.src} alt="location-image">
     </div>
   </div>
 </section>

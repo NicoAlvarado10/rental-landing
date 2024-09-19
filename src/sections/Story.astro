@@ -1,5 +1,9 @@
 ---
 import Article from "../components/Article.astro"
+import Story1 from "../assets/story-1.jpg"
+import Story2 from "../assets/story-2.jpg"
+import Story3 from "../assets/story-3.jpg"
+
 ---
 <section class="story">
     <h2 class="story__title">
@@ -12,7 +16,7 @@ import Article from "../components/Article.astro"
             año="2024"
             titulo="Adventures on the Open Road"
             parrafo="Join us as we dive into the exhilarating stories of travelers who embarked on unforgettable journeys with PREMIUM CAR RENTAL."
-            href="/assets/story-1.jpg"
+            href={Story1.src}
         />
         <Article
             fecha="04"
@@ -20,7 +24,7 @@ import Article from "../components/Article.astro"
             año="2024"
             titulo="Luxury and Comfort: Experiences"
             parrafo="In this series, we highlight the luxurious touches, unparalleled comfort, and exceptional service that make every ride."
-            href="/assets/story-2.jpg"
+            href={Story2.src}
         />
         <Article
             fecha="18"
@@ -28,7 +32,7 @@ import Article from "../components/Article.astro"
             año="2024"
             titulo="Cars that Adapt to Your Lifestyle"
             parrafo="Read about how our versatile vehicles have seamlessly integrated into the lives of professionals and families alike."
-            href="/assets/story-3.jpg"
+            href={Story3.src}
         />
     </div>
 </section>
